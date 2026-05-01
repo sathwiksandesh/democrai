@@ -1,4 +1,4 @@
-# DemocrAI 🇮🇳
+# DemocrAI
 
 An intelligent, AI-powered civic education web application designed to guide Indian voters through every step of the election process. Built with a modern React SPA architecture, rigorous WCAG 2.1 AA accessibility, and **7 integrated Google Cloud services**.
 
