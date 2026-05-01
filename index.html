@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DemocrAI — AI-powered civic education platform guiding Indian voters through registration, voting, and election results. Powered by Google Gemini, Maps, Translation, and more." />
+    <meta name="keywords" content="voter education, Indian elections, voter registration, election guide, AI assistant, civic tech, ECI, Gemini, Google Cloud" />
+    <meta name="theme-color" content="#111111" />
+
+    <!-- Essential Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https: ws: wss:; img-src 'self' https: data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https:; font-src 'self' https: data:;">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <script>
+      (function() {
+        var size = 64, radius = 12, pad = 3;
+        var canvas = document.createElement('canvas');
+        canvas.width = size; canvas.height = size;
+        var ctx = canvas.getContext('2d');
+        var img = new Image();
+        img.onload = function() {
+          // Rounded rect clip
+          ctx.beginPath();
+          ctx.moveTo(radius, 0);
+          ctx.lineTo(size - radius, 0);
+          ctx.quadraticCurveTo(size, 0, size, radius);
+          ctx.lineTo(size, size - radius);
+          ctx.quadraticCurveTo(size, size, size - radius, size);
+          ctx.lineTo(radius, size);
+          ctx.quadraticCurveTo(0, size, 0, size - radius);
+          ctx.lineTo(0, radius);
+          ctx.quadraticCurveTo(0, 0, radius, 0);
+          ctx.closePath();
+          ctx.fillStyle = '#ffffff';
+          ctx.fill();
+          ctx.clip();
+          // Draw logo centered with padding
+          ctx.drawImage(img, pad, pad, size - pad * 2, size - pad * 2);
+          var link = document.querySelector("link[rel='icon']");
+          link.href = canvas.toDataURL('image/png');
+        };
+        img.src = '/favicon.png';
+      })();
+    </script>
+    <title>DemocrAI - Your AI Guide to Democracy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics 4 (gtag.js) — GOOGLE SERVICES -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', {
+        page_title: document.title,
+        send_page_view: true,
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Skip Navigation Link — ACCESSIBILITY: WCAG 2.1 AA -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-bold">
+      Skip to main content
+    </a>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": ["eslint:recommended"],
+  "rules": {
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "no-new-func": "error",
+    "no-var": "error",
+    "prefer-const": "error",
+    "eqeqeq": ["error", "always"],
+    "curly": ["error", "multi-line"],
+    "no-console": "warn",
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "complexity": ["warn", 15],
+    "max-depth": ["warn", 4]
+  },
+  "ignorePatterns": ["dist/", "node_modules/", "coverage/", "temp_*"]
+}
